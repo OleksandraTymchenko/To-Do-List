@@ -1,0 +1,82 @@
+body{
+    background:#CFEFF2;
+    margin: 0;
+}
+h1{
+   text-align: center 
+}
+.todo-wrapper{
+    background:white;
+    border:  2px solid white;
+    border-radius: 8px;
+    margin: 5% 20%; /* Отступы вокруг элемента */
+}
+
+ header {
+    background: #8befdb;
+    border:  2px solid #70D0D9 ;
+    border-radius: 8px;
+    color: white;
+   }
+ main {
+   color:black;
+    padding: 5% 15px
+ }  
+ .action{
+   position:relative;
+ }  
+.addNew {background-color: #8befdb;
+   margin:0 1px;
+   height:25px;
+   border:none;
+} 
+.addNew:hover {background: #5DABB3;}
+input[type=text]{
+  border-radius: 4px;
+  margin: 10px 0;
+  padding:0 2%;
+  height:25px;
+  width: 90%;
+}
+input[type=submit]{
+  border-radius: 4px;
+  margin: 10px 0;
+  padding:0 2%;
+  height:25px;
+  
+}
+.btn{
+  background-color: #8befdb;
+  border-radius: 4px;
+  margin: 5px 0;
+  padding:0 2%;
+  height:25px;
+  border:none;
+}
+.btn:hover {background: #5DABB3;}
+.to-be-changed {
+ color: black;}
+input[type=checkbox]:checked ~ .to-be-changed {
+text-decoration: line-through;
+}
+h2{
+  color: #70D0D9;
+}
+.class1{
+  font-size:20px;
+
+}
+.priority{
+ float:right;
+ padding-right:10px;
+  color:#5DABB3;
+}
+
+@media screen and (max-width: 420px) {
+    #action {width: 120%;}
+    label {font: bold 13px;}
+    .to-be-changed  {text-transform: lowercase; }
+    #X {display:none;}
+    .todo-wrapper{
+    margin: 5% 5%; }
+   }
