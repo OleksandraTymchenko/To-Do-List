@@ -1,0 +1,17 @@
+
+<h1>What to do:</h1>
+<!-- Add new action -->
+<div class="class1">
+<label for="action">Add new Task</label><br/>
+<input  type="text" name="action" id="action" onfocus="clearField(this)" placeholder="add new task" ng-model="newAction" ><br/>
+<input type="button" value="Add"  ng-click="addAction()">
+</div>
+<div class="class2">
+   <ul>
+    <li ng-repeat="item in items | filter:action | orderBy track by $index">
+      {{ item | uppercase }}
+      <span ng-click="delAction(item)" style="float:right;cursor:pointer">X</span>
+      </li>
+  </ul>
+</div>
+

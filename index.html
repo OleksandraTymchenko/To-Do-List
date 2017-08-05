@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<script src="app.js"></script>
+<link rel="stylesheet" href="style.css" />
+<body ng-app="myApp" ng-controller="todoCtrl">
+<div class="todo-wrapper" >
+<header>
+<h1> LIST OF TODOS</h1>
+</header>
+<main>
+<span>{{currentDate | date}} </span>
+<form ng-submit="todoAdd()" ng-init="priority ='high'">
+    <div class="action">
+    <input   type="text"  ng-model="todoInput" required placeholder="What needs to be done">
+     <span id="X" ng-click="reset()" style=" position: absolute; cursor:pointer; right: 8%; bottom: 15px; color: grey;">X</span>
+    </div>
+    <label>
+      <input type="radio" ng-model="priority" value="high">high
+    </label>
+    <label>
+      <input type="radio" ng-model="priority" value="middle">middle
+    </label>
+    <label>
+      <input type="radio" ng-model="priority" value="low">low
+    </label>
+    <br/>
+    <input type="submit" class="addNew" value="Add New">
+    
+</form>
+
+<br>
+
+<div class="class1" ng-repeat="todo in todoList ">
+    <input type="checkbox" ng-model="todo.done"  ng-bind="todo.todoText"><span class="to-be-changed"> {{todo.todoText| uppercase }}</span>
+     <span ng-click="delete(todo)" style="float:right;cursor:pointer; padding -bottom: 20px; color: grey;">x</span>
+     <span class="priority" ng-bind="todo.priority"></span>
+<hr>
+</div>
+<div ng-show="getTotalTodos()">
+                    <input id="toggle-all" type="checkbox" ng-model="markAll" ng-click="toggleMarkAll()"/>
+                    <label for="toggle-all">Mark all as complete</label>
+</div>
+<p><button class="btn" ng-click="remove()">Remove marked</button></p>
+<h2>You've got <span>{{getTotalTodos()}}</span> things to do</h2>
+
+
+</main>
+</div>
+</body>
+</html>
